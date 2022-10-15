@@ -21,11 +21,12 @@ end
                 expect(page).to have_content(@triplecrown2.country)
             end
         end
-        
+
         describe 'when I visit /triples/:id' do
-            it 'see the parent with that id including the parents attributes' do
+        # When I visit '/parents/:id'
+        # Then I see the parent with that id including the parent's attributes
+            it 'sees the triple crown with that id including the triple crown attributes' do
                 visit "/triples/#{@triplecrown.id}"
-                save_and_open_page
 
                 expect(page).to have_content(@triplecrown.country)
                 expect(page).to have_content(@triplecrown.year_established)
@@ -34,6 +35,27 @@ end
                 expect(page).to_not have_content(@triplecrown2.country)
                 expect(page).to_not have_content(@triplecrown2.year_established)
                 expect(page).to_not have_content(@triplecrown2.dirt_track)
+            end
+        end
+
+        describe 'when I visit /winners_table_name' do
+        # When I visit '/child_table_name'
+        # Then I see each Child in the system including the Child's attributes
+            it 'sees each winner in the system including the winners attributes' do
+                visit '/winners_table_name'
+
+                expect(page).to have_content(@sirbarton.name)
+                expect(page).to have_content(@sirbarton.year_won)
+                expect(page).to have_content(@sirbarton.jockey)
+                expect(page).to have_content(@sirbarton.trainer)
+                expect(page).to have_content(@sirbarton.sired_TC_winner)
+                expect(page).to have_content(@secretariat.name)
+                expect(page).to have_content(@secretariat.year_won)
+                expect(page).to have_content(@secretariat.jockey)
+                expect(page).to have_content(@secretariat.trainer)
+                expect(page).to have_content(@secretariat.sired_TC_winner)
+                expect(page).to have_content(@westaustralian.name)
+                expect(page).to have_content(@rocksand.name)
             end
         end
     end
