@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(version: 2022_10_15_213103) do
     t.string "country"
     t.integer "year_established"
     t.boolean "dirt_track"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "winners", force: :cascade do |t|
@@ -27,6 +29,8 @@ ActiveRecord::Schema.define(version: 2022_10_15_213103) do
     t.string "jockey"
     t.string "trainer"
     t.boolean "sired_TC_winner"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.bigint "triple_id"
     t.index ["triple_id"], name: "index_winners_on_triple_id"
   end

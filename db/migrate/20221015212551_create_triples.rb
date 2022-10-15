@@ -5,7 +5,7 @@ class CreateTriples < ActiveRecord::Migration[5.2]
       t.integer :year_established
       t.boolean :dirt_track
 
-      t.timestamp
+      t.timestamps
     end
   end
 end

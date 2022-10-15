@@ -7,7 +7,7 @@ class CreateWinners < ActiveRecord::Migration[5.2]
       t.string :trainer
       t.boolean :sired_TC_winner
 
-      t.timestamp
+      t.timestamps
     end
   end
 end
