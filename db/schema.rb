@@ -32,11 +32,11 @@ ActiveRecord::Schema.define(version: 2022_10_15_004101) do
     t.integer "preakness_stakes_time"
     t.integer "belmont_stakes_time"
     t.boolean "sired_TC_winner"
-    t.bigint "triples_id"
+    t.bigint "triple_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["triples_id"], name: "index_winners_on_triples_id"
+    t.index ["triple_id"], name: "index_winners_on_triple_id"
   end
 
-  add_foreign_key "winners", "triples", column: "triples_id"
+  add_foreign_key "winners", "triples"
 end

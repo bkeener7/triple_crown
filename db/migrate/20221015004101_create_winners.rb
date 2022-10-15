@@ -9,7 +9,7 @@ class CreateWinners < ActiveRecord::Migration[5.2]
       t.integer :preakness_stakes_time
       t.integer :belmont_stakes_time
       t.boolean :sired_TC_winner
-      t.references :triples, foreign_key: true
+      t.references :triple, foreign_key: true
 
       t.timestamps
     end
