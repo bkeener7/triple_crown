@@ -58,5 +58,24 @@ end
                 expect(page).to have_content(@rocksand.name)
             end
         end
+
+        describe 'when I visit /winners_table_name/:id' do
+        # When I visit '/child_table_name/:id'
+        # Then I see the child with that id including the child's attributes
+            it 'sees the winner with that id including the winner attributes' do
+                visit "/winners_table_name/#{@secretariat.id}"
+
+                expect(page).to have_content(@secretariat.name)
+                expect(page).to have_content(@secretariat.year_won)
+                expect(page).to have_content(@secretariat.jockey)
+                expect(page).to have_content(@secretariat.trainer)
+                expect(page).to have_content(@secretariat.sired_TC_winner)
+
+                expect(page).to_not have_content(@sirbarton.name)
+                expect(page).to_not have_content(@sirbarton.year_won)
+                expect(page).to_not have_content(@sirbarton.jockey)
+                expect(page).to_not have_content(@sirbarton.trainer)
+            end
+        end
     end
 end

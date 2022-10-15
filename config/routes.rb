@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   get '/triples', to: 'triples#index'
   get '/triples/:id', to: 'triples#show'
   get '/winners_table_name', to: 'winners#index'
+  get '/winners_table_name/:id', to: 'winners#show'
 end
