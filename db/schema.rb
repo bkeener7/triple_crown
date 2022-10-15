@@ -10,17 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_10_15_004101) do
+ActiveRecord::Schema.define(version: 2022_10_15_213103) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "triples", force: :cascade do |t|
-    t.string "name"
-    t.integer "year_commissioned"
-    t.boolean "us_only"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string "country"
+    t.integer "year_established"
+    t.boolean "dirt_track"
   end
 
   create_table "winners", force: :cascade do |t|
@@ -28,13 +26,8 @@ ActiveRecord::Schema.define(version: 2022_10_15_004101) do
     t.integer "year_won"
     t.string "jockey"
     t.string "trainer"
-    t.integer "kentucky_derby_time"
-    t.integer "preakness_stakes_time"
-    t.integer "belmont_stakes_time"
     t.boolean "sired_TC_winner"
     t.bigint "triple_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.index ["triple_id"], name: "index_winners_on_triple_id"
   end
 
