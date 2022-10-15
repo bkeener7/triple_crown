@@ -21,5 +21,20 @@ end
                 expect(page).to have_content(@triplecrown2.country)
             end
         end
+        
+        describe 'when I visit /triples/:id' do
+            it 'see the parent with that id including the parents attributes' do
+                visit "/triples/#{@triplecrown.id}"
+                save_and_open_page
+
+                expect(page).to have_content(@triplecrown.country)
+                expect(page).to have_content(@triplecrown.year_established)
+                expect(page).to have_content(@triplecrown.dirt_track)
+
+                expect(page).to_not have_content(@triplecrown2.country)
+                expect(page).to_not have_content(@triplecrown2.year_established)
+                expect(page).to_not have_content(@triplecrown2.dirt_track)
+            end
+        end
     end
 end
