@@ -22,5 +22,27 @@ end
                 expect(page).to have_content(@triplecrown2.country)
             end
         end
+
+        describe 'when I visit the triples index' do
+        # I see that records are ordered by most recently created first
+        # And next to each of the records I see when it was created
+            it 'sees that records are ordered by most recently created first' do
+                triplecrown3 = Triple.create!(country: 'Canada', year_established: 1959, dirt_track: false)
+                triplecrown4 = Triple.create!(country: 'Australia', year_established: 1935, dirt_track: false)
+                visit '/triples'
+
+                expect(triplecrown4.country).to appear_before(triplecrown3.country)
+                expect(triplecrown3.country).to appear_before(@triplecrown2.country)
+                expect(@triplecrown2.country).to appear_before(@triplecrown.country)
+                expect(@triplecrown.country).to_not appear_before(@triplecrown2.country)
+            end
+
+            it 'sees when it was created next to each of the records' do
+                visit '/triples'
+
+                expect(page).to have_content(@triplecrown.created_at)
+                expect(page).to have_content(@triplecrown2.created_at)
+            end
+        end
     end
 end

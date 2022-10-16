@@ -1,8 +1,8 @@
 <h1>Triple Crown of Thoroughbred Racing (<%= @triple.country %>)</h1>
 <% @winners.each do |winner| %>
-<h3><%= winner.name %></h3>
-<b>Year Won: <%= winner.year_won %></b><br>
-Jockey: <%= winner.jockey %><br>
-Trainer: <%= winner.trainer %><br>
-Sired another Triple Crown winner? <%= winner.sired_TC_winner %> 
+    <h3><%= winner.name %></h3>
+    <b>Year Won: <%= winner.year_won %></b><br>
+    Jockey: <%= winner.jockey %><br>
+    Trainer: <%= winner.trainer %><br>
+    Sired another Triple Crown winner? <%= winner.sired_TC_winner %> 
 <% end %>
