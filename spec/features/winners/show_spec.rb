@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'triples index' do
+RSpec.describe 'winners show' do
 
 before :each do
     @triplecrown = Triple.create!(country: 'United States', year_established: 1950, dirt_track: true)
@@ -13,13 +13,22 @@ end
 
     describe 'as a user' do
     # As a visitor
-        describe 'when I visit /triples' do
-        # When I visit '/parents'
-        # Then I see the name of each parent record in the system
-            it 'sees the name of each country record in the system' do
-                visit '/triples'
-                expect(page).to have_content(@triplecrown.country)
-                expect(page).to have_content(@triplecrown2.country)
+        describe 'when I visit /winners_table_name/:id' do
+        # When I visit '/child_table_name/:id'
+        # Then I see the child with that id including the child's attributes
+            it 'sees the winner with that id including the winner attributes' do
+                visit "/winners_table_name/#{@secretariat.id}"
+
+                expect(page).to have_content(@secretariat.name)
+                expect(page).to have_content(@secretariat.year_won)
+                expect(page).to have_content(@secretariat.jockey)
+                expect(page).to have_content(@secretariat.trainer)
+                expect(page).to have_content(@secretariat.sired_TC_winner)
+
+                expect(page).to_not have_content(@sirbarton.name)
+                expect(page).to_not have_content(@sirbarton.year_won)
+                expect(page).to_not have_content(@sirbarton.jockey)
+                expect(page).to_not have_content(@sirbarton.trainer)
             end
         end
     end
