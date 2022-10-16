@@ -50,23 +50,23 @@ end
             # Then I see a link at the top of the page that takes me to the Parent Index
                 it 'sees a link at the top of the page that takes me to the triples index' do
                     visit '/triples'
-                    click_on 'Triple Crowns'
+                    click_on 'Triple Crowns (All Nations)'
                     expect(current_path).to eq('/triples')
                     
                     visit '/winners_table_name'
-                    click_on 'Triple Crowns'
+                    click_on 'Triple Crowns (All Nations)'
                     expect(current_path).to eq('/triples')
     
                     visit "/triples/#{@triplecrown.id}"
-                    click_on 'Triple Crowns'
+                    click_on 'Triple Crowns (All Nations)'
                     expect(current_path).to eq('/triples')
     
                     visit "/winners_table_name/#{@secretariat.id}"
-                    click_on 'Triple Crowns'
+                    click_on 'Triple Crowns (All Nations)'
                     expect(current_path).to eq('/triples')
                     
                     visit "/triples/#{@triplecrown.id}/winners_table_name"
-                    click_on 'Triple Crowns'
+                    click_on 'Triple Crowns (All Nations)'
                     expect(current_path).to eq('/triples')
                 end
             end

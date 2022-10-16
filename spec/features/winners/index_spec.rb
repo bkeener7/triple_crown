@@ -39,23 +39,23 @@ end
         # Then I see a link at the top of the page that takes me to the Child Index
             it 'sees a link at the top of the page that takes me to the winners index' do
                 visit '/triples'
-                click_on 'Triple Crown Winners'
+                click_on 'All Triple Crown Winners'
                 expect(current_path).to eq('/winners_table_name')
 
                 visit '/winners_table_name'
-                click_on 'Triple Crown Winners'
+                click_on 'All Triple Crown Winners'
                 expect(current_path).to eq('/winners_table_name')
 
                 visit "/triples/#{@triplecrown.id}"
-                click_on 'Triple Crown Winners'
+                click_on 'All Triple Crown Winners'
                 expect(current_path).to eq('/winners_table_name')
 
                 visit "/winners_table_name/#{@secretariat.id}"
-                click_on 'Triple Crown Winners'
+                click_on 'All Triple Crown Winners'
                 expect(current_path).to eq('/winners_table_name')
 
                 visit "/triples/#{@triplecrown.id}/winners_table_name"
-                click_on 'Triple Crown Winners'
+                click_on 'All Triple Crown Winners'
                 expect(current_path).to eq('/winners_table_name')
             end
         end
