@@ -8,6 +8,8 @@
 
 @triplecrown = Triple.create!(country: 'United States', year_established: 1950, dirt_track: true)
 @triplecrown2 = Triple.create!(country: 'United Kingdom', year_established: 1853, dirt_track: false)
+@triplecrown3 = Triple.create!(country: 'Canada', year_established: 1959, dirt_track: false)
+@triplecrown4 = Triple.create!(country: 'Australia', year_established: 1935, dirt_track: false)
 @sirbarton = @triplecrown.winners.create!(name: 'Sir Barton', year_won: 1919, jockey: 'Johnny Loftus', trainer: 'H. Guy Bedwell', sired_TC_winner: false)
 @secretariat = @triplecrown.winners.create!(name: 'Secretariat', year_won: 1973, jockey: 'Ron Turcotte', trainer: 'Lucien Laurin', sired_TC_winner: false)
 @westaustralian = @triplecrown2.winners.create!(name: 'West Australian', year_won: 1853, jockey: 'Frank Butler', trainer: 'John Scott', sired_TC_winner: false)
