@@ -5,5 +5,7 @@ class TriplesController < ApplicationController
 
     def show
         @triple = Triple.find(params[:id])
+        @triplecount = @triple.winners.count
     end
+
 end

@@ -28,5 +28,15 @@ end
                 expect(page).to_not have_content(@triplecrown2.dirt_track)
             end
         end
+
+        describe 'when I visit triples show page' do
+        # When I visit a parent's show page
+        # I see a count of the number of children associated with this parent
+            it 'sees a count of the number of winners associated with this parent' do
+                visit "/triples/#{@triplecrown.id}"
+
+                expect(page).to have_content(@triplecrown.winners.count)
+            end
+        end
     end
 end
