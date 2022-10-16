@@ -1,6 +1,6 @@
 class TriplesController < ApplicationController
     def index
-        @triples = Triple.all
+        @triples = Triple.all.sort_by(&:created_at).reverse
     end
 
     def show
