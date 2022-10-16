@@ -1,0 +1,9 @@
+<h1>Triple Crown Winners</h1>
+<% @winners.each do |winner| %>
+    <h3><%= winner.name %></h3>
+    <p>Year Won: <%= winner.year_won %></p>
+    <p>Jockey: <%= winner.jockey %></p>
+    <p>Trainer: <%= winner.trainer %></p>
+    <p>Sired a Triple Crown winner? <%= winner.sired_TC_winner %></p>
+<% end %>
+
