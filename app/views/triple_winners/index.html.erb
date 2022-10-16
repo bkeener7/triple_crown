@@ -1,5 +1,5 @@
 <h1>Triple Crown of Thoroughbred Racing (<%= @triple.country %>)</h1>
-<a href='/winners_table_name'>Triple Crown Winners</a>
+<a href='/winners_table_name'>Triple Crown Winners</a> <a href='/triples'>Triple Crowns</a>
 <% @winners.each do |winner| %>
     <h3><%= winner.name %></h3>
     <b>Year Won: <%= winner.year_won %></b><br>
