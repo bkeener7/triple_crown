@@ -37,7 +37,6 @@ end
                 fill_in('year_established', with: 2019)
                 fill_in('dirt_track', with: false)
                 click_button('Update Triple Crown Series')
-                save_and_open_page
 
                 expect(current_path).to eq("/triples/#{@triplecrown.id}")
                 expect(page).to have_content('New Zealand')
