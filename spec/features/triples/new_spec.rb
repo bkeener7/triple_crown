@@ -34,14 +34,13 @@ end
 
                 it 'when I create a new parents attributes, click Create Triple to submit, then a POST request is sent and a new parent record is created' do
                     visit '/triples/new'
-                    save_and_open_page
 
                     fill_in('country', with: 'New Zealand')
                     fill_in('year_established', with: 2019)
-                    fill_in('dirt_tracks_only', with: false)
-                    
+                    fill_in('dirt_track', with: false)                    
                     click_button('Create Triple Crown Series')
                     # new_triple_id = Triple.last.id
+                    
                     expect(current_path).to eq('/triples')
                     expect(page).to have_content('New Zealand')
                 end

@@ -20,4 +20,14 @@ class TriplesController < ApplicationController
         params.permit(:country, :year_established, :dirt_track)
     end
 
+    def edit
+        @triple = Triple.find(params[:id])
+    end
+
+    def update
+        triple = Triple.find(params[:id])
+        triple.update(triple_params)
+        redirect_to "/triples/#{triple.id}"
+    end
+
 end
