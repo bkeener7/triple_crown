@@ -1,0 +1,11 @@
+<h2>New Triple Crown Series</h2>
+
+<%= form_with url: '/triples', method: :post, local: true do |form| %>
+<%= form.label :country %>
+<%= form.text_field :country %><br><br>
+<%= form.label :year_established %>
+<%= form.text_field :year_established %><br><br>
+<%= form.label :dirt_tracks_only %>
+<%= form.text_field :dirt_tracks_only %><br><br>
+<%= form.submit 'Create Triple Crown Series' %>
+<% end %>

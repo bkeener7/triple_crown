@@ -44,12 +44,9 @@ end
         # Then I see a link to take me to that parent's `child_table_name` page ('/parents/:id/child_table_name')
             it 'sees a link to take me to the winners winner/table/name page' do
                 visit "/triples/#{@triplecrown.id}"
-
-                save_and_open_page
-
                 click_on "#{@triplecrown.country} Triple Crown Winners"
+                
                 expect(current_path).to eq("/triples/#{@triplecrown.id}/winners_table_name")
-             
             end
         end
 
