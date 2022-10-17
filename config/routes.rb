@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   get '/winners_table_name/:id', to: 'winners#show'
   get '/triples/:id/winners_table_name', to: 'triple_winners#index'
   post '/triples', to: 'triples#create'
-  patch '/triples/:id', to: 'triples#update' 
+  patch '/triples/:id', to: 'triples#update'
+  delete 'triples/:id', to: 'triples#destroy'
 end

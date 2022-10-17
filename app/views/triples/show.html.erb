@@ -6,4 +6,5 @@ Country: <%= @triple.country %><br>
 <h4>Year Established: <%= @triple.year_established %><br>
 Number of winners: <%= @triplecount %><br>
 Features only dirt tracks? <%= @triple.dirt_track %><br>
-<font size="-1"><%= link_to "Update #{@triple.country} Triple Crown", "/triples/#{@triple.id}/edit" %></font size="-1"><h4>
+<font size="-1"><%= link_to "Update #{@triple.country} Triple Crown", "/triples/#{@triple.id}/edit" %></font size="-1"><br><br>
+<%= button_to "Delete #{@triple.country} Triple Crown", "/triples/#{@triple.id}", method: :delete %><h4>
