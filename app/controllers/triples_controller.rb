@@ -12,8 +12,12 @@ class TriplesController < ApplicationController
     end
 
     def create
-        new_triple = Triple.create!(country: params[:country], year_established: params[:year_established], dirt_track: params[:dirt_tracks_only])
+        new_triple = Triple.create!(triple_params)
         redirect_to '/triples'
+    end
+
+    def triple_params
+        params.permit(:country, :year_established, :dirt_track)
     end
 
 end
