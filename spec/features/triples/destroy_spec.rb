@@ -20,6 +20,8 @@ end
             expect(page).to have_content('Canada')
 
             visit "/triples/#{triplecrown3.id}"
+            expect(page).to have_button("Delete #{triplecrown3.country} Triple Crown")
+            
             click_button "Delete #{triplecrown3.country} Triple Crown" 
 
             expect(current_path).to eq('/triples')

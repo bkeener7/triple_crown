@@ -35,7 +35,7 @@ end
             it 'sees a count of the number of winners associated with this parent' do
                 visit "/triples/#{@triplecrown.id}"
 
-                expect(page).to have_content(@triplecrown.winners.count)
+                expect(page).to have_content(@triplecrown.winner_count)
             end
         end
 

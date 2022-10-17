@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'triple_winners index' do
+RSpec.describe 'triple/winners index' do
 
 before :each do
     @triplecrown = Triple.create!(country: 'United States', year_established: 1950, dirt_track: true)

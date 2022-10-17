@@ -1,11 +1,10 @@
 class TriplesController < ApplicationController
     def index
-        @triples = Triple.all.sort_by(&:created_at).reverse
+        @triples = Triple.all.order_by_created_at
     end
 
     def show
         @triple = Triple.find(params[:id])
-        @triplecount = @triple.winners.count
     end
     
     def new
