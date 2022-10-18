@@ -72,5 +72,14 @@ end
                 expect(page).to_not have_content(@sirbarton.sired_TC_winner)
             end
         end
+
+        describe 'When I visit the winners index page' do
+            it 'has a link to edit that triple crown winners info' do
+                visit '/winners_table_name'
+                click_link "Edit #{@gallantfox.name}"
+
+                expect(current_path).to eq("/winners_table_name/#{@gallantfox.id}/edit")
+            end
+        end
     end
 end

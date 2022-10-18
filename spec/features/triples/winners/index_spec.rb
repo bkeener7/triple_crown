@@ -78,5 +78,19 @@ end
                 expect(@secretariat.name).to appear_before(@sirbarton.name)
             end
         end
+
+        describe 'When I visit the triples/winners index page' do
+            it 'has a link to edit that triple crown winners info' do
+                visit "/triples/#{@triplecrown.id}/winners_table_name"
+                click_link "Edit #{@gallantfox.name}"
+
+                expect(current_path).to eq("/winners_table_name/#{@gallantfox.id}/edit")
+
+                visit "/triples/#{@triplecrown.id}/winners_table_name"
+                click_link "Edit #{@sirbarton.name}"
+                
+                expect(current_path).to eq("/winners_table_name/#{@sirbarton.id}/edit")
+            end
+        end
     end
 end

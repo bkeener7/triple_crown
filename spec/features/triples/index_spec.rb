@@ -71,8 +71,8 @@ end
             end
         end
 
-        describe 'When I visit the parent index page' do
-            it 'has a link to edit that parents info' do
+        describe 'When I visit the triples index page' do
+            it 'has a link to edit that triple crowns info' do
                 visit '/triples'
                 click_link "Edit #{@triplecrown.country} Triple Crown"
 
