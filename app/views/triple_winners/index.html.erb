@@ -7,4 +7,5 @@
     Trainer: <%= winner.trainer %><br>
     Sired another Triple Crown winner? <%= winner.sired_TC_winner %> 
 <% end %>
+<p><font size="2"><%= link_to 'Sort Alphabetically', sort_param: :name %></font></p>
 <p><font size="2"><%= link_to 'New Triple Crown Winner', "/triples/#{@triple.id}/winners_table_name/new" %></font></p>

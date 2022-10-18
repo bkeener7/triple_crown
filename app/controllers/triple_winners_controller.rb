@@ -1,7 +1,7 @@
 class TripleWinnersController < ApplicationController
     def index
         @triple = Triple.find(params[:id])
-        @winners = @triple.winners
+        @winners = @triple.winners.order(params[:sort_param])
     end
 
     def new
