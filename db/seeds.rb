@@ -17,3 +17,4 @@
 @gladiateur = @triplecrown2.winners.create!(name: 'Gladiateur', year_won: 1865, jockey: 'Harry Grimshaw', trainer: 'Tom Jennings, Sr.', sired_TC_winner: false)
 @rocksand = @triplecrown2.winners.create!(name: 'Rock Sand', year_won: 1903, jockey: 'Danny Maher', trainer: 'George Blackwell', sired_TC_winner: false)
 @fakehorse = @triplecrown3.winners.create!(name: 'Not a Real Horse', year_won: 2049, jockey: 'Clint Eastwood', trainer: 'Ronald Reagan', sired_TC_winner: true)
+@another_fakehorse = @triplecrown4.winners.create!(name: 'Also Not a Real Horse', year_won: 2999, jockey: 'Philip J. Fry', trainer: 'Head of Richard Nixon', sired_TC_winner: true)
