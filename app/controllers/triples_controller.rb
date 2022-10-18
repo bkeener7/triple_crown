@@ -27,6 +27,7 @@ class TriplesController < ApplicationController
 
     def destroy
         triple = Triple.find(params[:id])
+        triple.winners.destroy_all
         triple.destroy
         redirect_to('/triples')
     end

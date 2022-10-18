@@ -12,10 +12,7 @@ before :each do
 end
 
     describe 'as a user' do
-    # As a visitor
         describe 'when I visit /triples/:id' do
-        # When I visit '/parents/:id'
-        # Then I see the parent with that id including the parent's attributes
             it 'sees the triple crown with that id including the triple crown attributes' do
                 visit "/triples/#{@triplecrown.id}"
 
@@ -30,8 +27,6 @@ end
         end
 
         describe 'when I visit triples show page' do
-        # When I visit a parent's show page
-        # I see a count of the number of children associated with this parent
             it 'sees a count of the number of winners associated with this parent' do
                 visit "/triples/#{@triplecrown.id}"
 
@@ -40,8 +35,6 @@ end
         end
 
         describe 'when I visit a triples show page /triples/:id' do
-        # When I visit a parent show page ('/parents/:id')
-        # Then I see a link to take me to that parent's `child_table_name` page ('/parents/:id/child_table_name')
             it 'sees a link to take me to the winners winner/table/name page' do
                 visit "/triples/#{@triplecrown.id}"
                 click_on "#{@triplecrown.country} Triple Crown Winners"

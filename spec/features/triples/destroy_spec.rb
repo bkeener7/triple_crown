@@ -12,8 +12,7 @@ before :each do
 end
 
     describe 'as a user' do
-    # As a visitor
-        it 'can delete triples from index page' do
+        it 'can delete triples from the triple crown id page' do
             triplecrown3 = Triple.create!(country: 'Canada', year_established: 1959, dirt_track: false)
             
             visit '/triples'
@@ -26,6 +25,26 @@ end
 
             expect(current_path).to eq('/triples')
             expect(page).to_not have_content('Canada')
+        end
+        
+        it 'also deletes triples with their winners' do
+            visit "/triples/#{@triplecrown2.id}"
+            
+            click_button "Delete #{@triplecrown2.country} Triple Crown"
+
+            visit '/triples'
+            expect(page).to_not have_content('United Kingdom')            
+        end
+
+        it 'can delete triples from the triple crown index page' do
+            visit '/triples'
+
+            expect(page).to have_button("Delete #{@triplecrown.country} Triple Crown")
+
+            click_button "Delete #{@triplecrown.country} Triple Crown" 
+
+            expect(current_path).to eq('/triples')
+            expect(page).to_not have_content(@triplecrown.country)
         end
     end
 end

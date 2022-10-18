@@ -4,4 +4,8 @@ class Winner < ApplicationRecord
     def self.sired_winner
         where(sired_TC_winner: true)
     end
+
+    def self.year_filter(year)
+        where("year_won > #{year}")
+    end
 end

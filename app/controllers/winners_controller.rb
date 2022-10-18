@@ -17,6 +17,11 @@ class WinnersController < ApplicationController
         redirect_to "/winners_table_name/#{winner.id}"
     end
 
+    def destroy
+        Winner.find(params[:id]).destroy
+        redirect_to('/winners_table_name')
+    end
+
 private
     def winner_params
         params.permit(:name, :year_won, :jockey, :trainer, :sired_TC_winner)

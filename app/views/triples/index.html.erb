@@ -1,8 +1,9 @@
 <font size="2"><a href='/winners_table_name'>All Triple Crown Winners</a> <b>|</b> <a href='/triples'>Triple Crowns (All Nations)</a></font size="2">
 <h1>Triple Crown of Thoroughbred Racing</h1>
 <% @triples.each do |triple| %>
-    <h3>Country: <%= triple.country %><h3>
+    <h3>Country: <%= link_to "#{triple.country}", "/triples/#{triple.id}" %></h3>
     <font size="1"><%= link_to "Edit #{triple.country} Triple Crown", "/triples/#{triple.id}/edit" %>
     Created at: <%= triple.created_at %></font>
+    <p><%= button_to "Delete #{triple.country} Triple Crown", "/triples/#{triple.id}", method: :delete %></p>
 <% end %>
 <p><font size="3"><%= link_to 'New Triple Crown', '/triples/new' %></font></p>

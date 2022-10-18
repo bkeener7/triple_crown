@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get '/winners_table_name/:id/edit', to: 'winners#edit'
   get '/winners_table_name/:id', to: 'winners#show'
   patch '/winners_table_name/:id', to: 'winners#update'
+  delete '/winners_table_name/:id', to: 'winners#destroy'
 
   #Triple Crown Series and Winners Routes
   get '/triples/:id/winners_table_name/new', to: 'triple_winners#new'
