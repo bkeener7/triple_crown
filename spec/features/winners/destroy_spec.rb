@@ -24,4 +24,14 @@ end
         expect(current_path).to eq('/winners_table_name')
         expect(page).to_not have_content('Gallant Fox')
     end
+
+    it 'can delete winners from winner index page' do
+        visit '/winners_table_name'
+        expect(page).to have_button("Delete #{@gallantfox.name}")
+
+        click_button "Delete #{@gallantfox.name}"
+
+        expect(current_path).to eq('/winners_table_name')
+        expect(page).to_not have_content('Gallant Fox')
+    end
 end

@@ -83,6 +83,5 @@ end
                 expect(current_path).to eq("/triples/#{@triplecrown2.id}/edit")
             end
         end
-    
     end
 end
