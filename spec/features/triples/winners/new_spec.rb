@@ -23,8 +23,6 @@ end
             fill_in('sired_TC_winner', with: true)
             click_button('Create Triple Crown Winner')
 
-            save_and_open_page
-
             expect(current_path).to eq("/triples/#{@triplecrown.id}/winners_table_name")
             expect(page).to have_content('Gallant Fox')
             expect(page).to have_content(1930)
