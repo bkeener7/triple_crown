@@ -6,5 +6,6 @@
     <p>Jockey: <%= winner.jockey %></p>
     <p>Trainer: <%= winner.trainer %></p>
     <p>Sired a Triple Crown winner? <%= winner.sired_TC_winner %></p>
+    <p><font size="-1"><%= link_to "Edit #{winner.name}", "/winners_table_name/#{winner.id}/edit" %></font></p>
 <% end %>
 

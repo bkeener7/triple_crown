@@ -70,5 +70,19 @@ end
                 expect(current_path).to eq('/triples')
             end
         end
+
+        describe 'When I visit the triples index page' do
+            it 'has a link to edit that triple crowns info' do
+                visit '/triples'
+                click_link "Edit #{@triplecrown.country} Triple Crown"
+
+                expect(current_path).to eq("/triples/#{@triplecrown.id}/edit")
+
+                visit '/triples'
+                click_link "Edit #{@triplecrown2.country} Triple Crown"
+                expect(current_path).to eq("/triples/#{@triplecrown2.id}/edit")
+            end
+        end
+    
     end
 end
