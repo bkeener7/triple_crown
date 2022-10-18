@@ -12,20 +12,16 @@ before :each do
 end
 
     describe 'as a user' do
-    # As a visitor
         describe 'when I visit /triples' do
-        # When I visit '/parents'
-        # Then I see the name of each parent record in the system
             it 'sees the name of each country record in the system' do
                 visit '/triples'
+                
                 expect(page).to have_content(@triplecrown.country)
                 expect(page).to have_content(@triplecrown2.country)
             end
         end
 
         describe 'when I visit the triples index' do
-        # I see that records are ordered by most recently created first
-        # And next to each of the records I see when it was created
             it 'sees that records are ordered by most recently created first' do
                 triplecrown3 = Triple.create!(country: 'Canada', year_established: 1959, dirt_track: false)
                 triplecrown4 = Triple.create!(country: 'Australia', year_established: 1935, dirt_track: false)
@@ -46,8 +42,6 @@ end
         end
 
         describe 'When I visit any page on the site' do
-            # When I visit any page on the site
-            # Then I see a link at the top of the page that takes me to the Parent Index
             it 'sees a link at the top of the page that takes me to the triples index' do
                 visit '/triples'
                 click_on 'Triple Crowns (All Nations)'
@@ -80,6 +74,7 @@ end
 
                 visit '/triples'
                 click_link "Edit #{@triplecrown2.country} Triple Crown"
+                
                 expect(current_path).to eq("/triples/#{@triplecrown2.id}/edit")
             end
         end

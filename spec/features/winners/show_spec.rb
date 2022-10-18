@@ -12,10 +12,7 @@ before :each do
 end
 
     describe 'as a user' do
-    # As a visitor
         describe 'when I visit /winners_table_name/:id' do
-        # When I visit '/child_table_name/:id'
-        # Then I see the child with that id including the child's attributes
             it 'sees the winner with that id including the winner attributes' do
                 visit "/winners_table_name/#{@secretariat.id}"
 
@@ -33,14 +30,6 @@ end
         end
 
         describe 'when I visit a winner show page' do
-        # When I visit a Child Show page
-        # Then I see a link to update that Child "Update Child"
-        # When I click the link
-        # I am taken to '/child_table_name/:id/edit' where I see a form to edit the child's attributes:
-        # When I click the button to submit the form "Update Child"
-        # Then a `PATCH` request is sent to '/child_table_name/:id',
-        # the child's data is updated,
-        # and I am redirected to the Child Show page where I see the Child's updated information
             it 'sees a link to update the winner and redirects to a page to edit with a form' do
                 visit "/winners_table_name/#{@westaustralian.id}"
                 click_link "Update #{@westaustralian.name} Triple Crown"

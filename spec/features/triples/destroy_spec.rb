@@ -12,7 +12,6 @@ before :each do
 end
 
     describe 'as a user' do
-    # As a visitor
         it 'can delete triples from the triple crown id page' do
             triplecrown3 = Triple.create!(country: 'Canada', year_established: 1959, dirt_track: false)
             

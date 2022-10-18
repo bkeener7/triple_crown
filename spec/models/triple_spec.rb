@@ -15,9 +15,8 @@ RSpec.describe Triple do
     it 'puts Triple Crowns in order of created_at' do
         triplecrown3 = Triple.create!(country: 'Canada', year_established: 1959, dirt_track: false)
         triplecrown4 = Triple.create!(country: 'Australia', year_established: 1935, dirt_track: false)
-        triples = Triple.all
 
-        expect(triples.order_by_created_at).to eq([triplecrown4, triplecrown3, @triplecrown2, @triplecrown])
+        expect(Triple.order_by_created_at).to eq([triplecrown4, triplecrown3, @triplecrown2, @triplecrown])
     end
 
     it 'can count the number of winners in each Triple Crown' do

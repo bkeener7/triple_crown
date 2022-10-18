@@ -12,7 +12,6 @@ before :each do
 end
 
     describe 'as a user' do
-    # As a visitor
         it 'allows me to fill attributes for new winner and then create it' do
             visit "/triples/#{@triplecrown.id}/winners_table_name/new"
             

@@ -1,11 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
 @triplecrown = Triple.create!(country: 'United States', year_established: 1950, dirt_track: true)
 @triplecrown2 = Triple.create!(country: 'United Kingdom', year_established: 1853, dirt_track: false)
 @triplecrown3 = Triple.create!(country: 'Canada', year_established: 1959, dirt_track: false)

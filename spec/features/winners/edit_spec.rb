@@ -12,7 +12,6 @@ before :each do
 end
 
     describe 'as a user' do
-    # As a visitor
         it 'fills out the form with updated information and when I click submit, a PATCH request is sent to /parents/:id where the info is updated and I am redirected to show page' do
             visit "/winners_table_name/#{@westaustralian.id}/edit"
             fill_in('name', with: 'Gladiateur')

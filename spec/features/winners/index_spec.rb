@@ -13,14 +13,10 @@ before :each do
 end
 
     describe 'as a user' do
-    # As a visitor
         describe 'when I visit /winners_table_name' do
-        # When I visit '/child_table_name'
-        # Then I see each Child in the system including the Child's attributes
             it 'sees each winner in the system including the winners attributes' do
                 visit '/winners_table_name'
 
-                #changed due to user story 15
                 expect(page).to have_content(@gallantfox.name)
                 expect(page).to have_content(@gallantfox.year_won)
                 expect(page).to have_content(@gallantfox.jockey)
@@ -30,8 +26,6 @@ end
         end
 
         describe 'when I visit any page on the site' do
-        # When I visit any page on the site
-        # Then I see a link at the top of the page that takes me to the Child Index
             it 'sees a link at the top of the page that takes me to the winners index' do
                 visit '/triples'
                 click_on 'All Triple Crown Winners'

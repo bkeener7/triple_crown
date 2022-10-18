@@ -13,10 +13,7 @@ before :each do
 end
 
     describe 'as a user' do
-    # As a visitor
         describe 'when I visit /triples/:triple_id/winners_table_name' do
-        # When I visit '/parents/:parent_id/child_table_name'
-        # Then I see each Child that is associated with that Parent with each Child's attributes
             it 'sees each winner that is associated with that parent with each winners attributes' do
                 visit "/triples/#{@triplecrown.id}/winners_table_name"
 
@@ -47,15 +44,6 @@ end
         end
 
         describe 'when I visit a triples/winners index page' do
-        # When I visit a Parent Children Index page
-        # Then I see a link to add a new adoptable child for that parent "Create Child"
-        # When I click the link
-        # I am taken to '/parents/:parent_id/child_table_name/new' where I see a form to add a new adoptable child
-        # When I fill in the form with the child's attributes:
-        # And I click the button "Create Child"
-        # Then a `POST` request is sent to '/parents/:parent_id/child_table_name',
-        # a new child object/row is created for that parent,
-        # and I am redirected to the Parent Childs Index page where I can see the new child listed
             it 'has a link for me to create a new Triple Crown Winner' do
                 visit "/triples/#{@triplecrown.id}/winners_table_name"
                 click_link 'New Triple Crown Winner'
@@ -66,10 +54,6 @@ end
         end
 
         describe 'when I visit the triples winners index page' do
-        # When I visit the Parent's children Index Page
-        # Then I see a link to sort children in alphabetical order
-        # When I click on the link
-        # I'm taken back to the Parent's children Index Page where I see all of the parent's children in alphabetical order
             it 'has a link to sort children in alphabetical order' do
                 visit "/triples/#{@triplecrown.id}/winners_table_name"
                 click_link 'Sort Alphabetically'
