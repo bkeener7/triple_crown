@@ -1,0 +1,15 @@
+<h2>New Triple Crown Winner</h2>
+
+<%= form_with url: "/triples/#{@triple.id}/winners_table_name/create", method: :post, local: true do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %><br><br>
+  <%= form.label :year_won, 'Year Won' %>
+  <%= form.text_field :year_won %><br><br>
+  <%= form.label :jockey %>
+  <%= form.text_field :jockey %><br><br>
+  <%= form.label :trainer %>
+  <%= form.text_field :trainer %><br><br>
+  <%= form.label :sired_TC_winner, 'Sired another Triple Crown winner?' %>
+  <%= form.text_field :sired_TC_winner %><br><br>
+  <%= form.submit 'Create Triple Crown Winner' %>
+<% end %>

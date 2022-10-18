@@ -34,7 +34,7 @@ end
             end
         end
 
-        describe 'When I visit any page on the site' do
+        describe 'when I visit any page on the site' do
         # When I visit any page on the site
         # Then I see a link at the top of the page that takes me to the Child Index
             it 'sees a link at the top of the page that takes me to the winners index' do
