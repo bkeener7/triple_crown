@@ -1,6 +1,6 @@
 class WinnersController < ApplicationController
     def index
-        @winners = Winner.all
+        @winners = Winner.all.sired_winner
     end
 
     def show
