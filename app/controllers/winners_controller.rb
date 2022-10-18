@@ -26,5 +26,4 @@ private
     def winner_params
         params.permit(:name, :year_won, :jockey, :trainer, :sired_TC_winner)
     end
-
 end
