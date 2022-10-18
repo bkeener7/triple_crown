@@ -5,3 +5,4 @@ Jockey: <%= @winner.jockey %><br>
 Trainer: <%= @winner.trainer %><br>
 Sired another Triple Crown winner? <%= @winner.sired_TC_winner %><br><br> 
 <font size="-1"><%= link_to "Update #{@winner.name} Triple Crown", "/winners_table_name/#{@winner.id}/edit" %></font size="-1"><br><br>
+<%= button_to "Delete #{@winner.name}", "/winners_table_name/#{@winner.id}", method: :delete %><h4>

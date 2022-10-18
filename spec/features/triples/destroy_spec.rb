@@ -27,5 +27,14 @@ end
             expect(current_path).to eq('/triples')
             expect(page).to_not have_content('Canada')
         end
+        
+        it 'also deletes triples with their winners' do
+            visit "/triples/#{@triplecrown2.id}"
+            
+            click_button "Delete #{@triplecrown2.country} Triple Crown"
+
+            visit '/triples'
+            expect(page).to_not have_content('United Kingdom')            
+        end
     end
 end
