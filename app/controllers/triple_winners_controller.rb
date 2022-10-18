@@ -2,6 +2,9 @@ class TripleWinnersController < ApplicationController
     def index
         @triple = Triple.find(params[:id])
         @winners = @triple.winners.order(params[:sort_param])
+        if params[:year_filter] != nil        
+            @winners = @winners.year_filter(params[:year_filter])
+        end
     end
 
     def new

@@ -91,6 +91,19 @@ end
                 
                 expect(current_path).to eq("/winners_table_name/#{@sirbarton.id}/edit")
             end
+
+            it 'has a form where I can input a year and only find records that are more recent' do
+                visit "/triples/#{@triplecrown.id}/winners_table_name"
+
+                expect(page).to have_selector(:css, 'form')
+
+                fill_in('year_filter', with: 1931)
+                click_button('Return Triple Crown Winners After This Date')
+
+                expect(page).to have_content(@secretariat.name)
+                expect(page).to_not have_content(@sirbarton.name)
+                expect(page).to_not have_content(@gallantfox.name)
+            end
         end
     end
 end

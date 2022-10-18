@@ -16,4 +16,8 @@ RSpec.describe Winner do
     it 'only shows winners who have sired another Triple Crown Winner' do
         expect(Winner.sired_winner).to eq([@gallantfox])
     end
+
+    it 'can filter winners after a certain date' do
+        expect(Winner.year_filter(1931)).to eq([@secretariat])
+    end
 end

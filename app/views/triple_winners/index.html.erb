@@ -10,3 +10,8 @@
 <% end %>
 <p><font size="2"><%= link_to 'Sort Alphabetically', sort_param: :name %></font></p>
 <p><font size="2"><%= link_to 'New Triple Crown Winner', "/triples/#{@triple.id}/winners_table_name/new" %></font></p>
+
+<%= form_with url: "/triples/#{@triple.id}/winners_table_name", method: :get, local: true do |form| %>
+  <%= form.number_field :year_filter %>
+  <%= form.submit 'Return Triple Crown Winners After This Date' %>
+<% end %>
