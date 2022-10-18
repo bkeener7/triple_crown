@@ -29,7 +29,6 @@ end
             expect(page).to have_content('Earl Sande')
             expect(page).to have_content('Jim Fitzsimmons')
             expect(page).to have_content(true)
-
         end
     end
 end

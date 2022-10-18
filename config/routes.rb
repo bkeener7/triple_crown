@@ -11,11 +11,13 @@ Rails.application.routes.draw do
 
   #Triple Crown Winner Routes
   get '/winners_table_name', to: 'winners#index'
+  get '/winners_table_name/:id/edit', to: 'winners#edit'
   get '/winners_table_name/:id', to: 'winners#show'
+  patch '/winners_table_name/:id', to: 'winners#update'
 
   #Triple Crown Series and Winners Routes
   get '/triples/:id/winners_table_name/new', to: 'triple_winners#new'
   get '/triples/:id/winners_table_name', to: 'triple_winners#index'
   post '/triples/:id/winners_table_name/create', to: 'triple_winners#create'
-    
+
 end

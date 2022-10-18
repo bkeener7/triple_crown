@@ -10,12 +10,12 @@ class TripleWinnersController < ApplicationController
 
     def create
         @triple = Triple.find(params[:id])
-        @triple.winners.create!(winner_params)
+        @triple.winners.create!(triple_winner_params)
         redirect_to "/triples/#{@triple.id}/winners_table_name"
     end
 
 private
-    def winner_params
+    def triple_winner_params
         params.permit(:name, :year_won, :jockey, :trainer, :sired_TC_winner)
     end
 end
