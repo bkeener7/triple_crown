@@ -1,4 +1,3 @@
-<font size="2"><a href='/winners_table_name'>All Triple Crown Winners</a> <b>|</b> <a href='/triples'>Triple Crowns (All Nations)</a></font size="2">
 <h1>Triple Crown of Thoroughbred Racing</h1>
 <% @triples.each do |triple| %>
     <h3>Country: <%= link_to "#{triple.country}", "/triples/#{triple.id}" %></h3>
