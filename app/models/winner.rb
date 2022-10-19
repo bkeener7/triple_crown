@@ -6,6 +6,6 @@ class Winner < ApplicationRecord
     end
 
     def self.year_filter(year)
-        where("year_won > #{year}")
+        where("year_won > ?", "#{year}")
     end
 end
