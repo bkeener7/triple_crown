@@ -1,6 +1,6 @@
 <h2>New Triple Crown Winner</h2>
 
-<%= form_with url: "/triples/#{@triple.id}/winners_table_name/create", method: :post, local: true do |form| %>
+<%= form_with url: "/triples/#{@triple.id}/winners_table_name", method: :post, local: true do |form| %>
   <%= form.label :name %>
   <%= form.text_field :name %><br><br>
   <%= form.label :year_won, 'Year Won' %>
