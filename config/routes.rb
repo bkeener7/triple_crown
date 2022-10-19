@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  #Startup
+  get '/', to: 'triples#index'
+
   #Triple Crown Series Routes
   get '/triples', to: 'triples#index'
   get '/triples/new', to: 'triples#new'
