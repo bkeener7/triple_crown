@@ -1,5 +1,5 @@
 class Triple < ApplicationRecord
-    has_many :winners
+    has_many :winners, dependent: :destroy
 
     def self.order_by_created_at
         order(created_at: :desc)
