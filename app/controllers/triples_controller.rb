@@ -1,38 +1,38 @@
 class TriplesController < ApplicationController
-    def index
-        @triples = Triple.order_by_created_at
-    end
+  def index
+    @triples = Triple.order_by_created_at
+  end
 
-    def show
-        @triple = Triple.find(params[:id])
-    end
-    
-    def new
-    end
+  def show
+    @triple = Triple.find(params[:id])
+  end
 
-    def create
-        new_triple = Triple.create!(triple_params)
-        redirect_to '/triples'
-    end
+  def new; end
 
-    def edit
-        @triple = Triple.find(params[:id])
-    end
+  def create
+    new_triple = Triple.create!(triple_params)
+    redirect_to '/triples'
+  end
 
-    def update
-        triple = Triple.find(params[:id])
-        triple.update(triple_params)
-        redirect_to "/triples/#{triple.id}"
-    end
+  def edit
+    @triple = Triple.find(params[:id])
+  end
 
-    def destroy
-        triple = Triple.find(params[:id])
-        triple.destroy
-        redirect_to('/triples')
-    end
+  def update
+    triple = Triple.find(params[:id])
+    triple.update(triple_params)
+    redirect_to "/triples/#{triple.id}"
+  end
 
-private
-    def triple_params
-        params.permit(:country, :year_established, :dirt_track)
-    end
+  def destroy
+    triple = Triple.find(params[:id])
+    triple.destroy
+    redirect_to('/triples')
+  end
+
+  private
+
+  def triple_params
+    params.permit(:country, :year_established, :dirt_track)
+  end
 end
