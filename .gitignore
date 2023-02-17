@@ -34,3 +34,6 @@ coverage
 
 #DS_Store
 .DS_Store
+
+#rubocop config
+.rubocop.yml
