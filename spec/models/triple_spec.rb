@@ -1,8 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Triple do
-  it { should have_many :winners }
-
   before :each do
     @triplecrown = Triple.create!(country: 'United States', year_established: 1950, dirt_track: true)
     @triplecrown2 = Triple.create!(country: 'United Kingdom', year_established: 1853, dirt_track: false)
@@ -11,6 +9,8 @@ RSpec.describe Triple do
     @westaustralian = @triplecrown2.winners.create!(name: 'West Australian', year_won: 1853, jockey: 'Frank Butler', trainer: 'John Scott', sired_TC_winner: false)
     @rocksand = @triplecrown2.winners.create!(name: 'Rock Sand', year_won: 1903, jockey: 'Danny Maher', trainer: 'George Blackwell', sired_TC_winner: false)
   end
+
+  it { should have_many :winners }
 
   it 'puts Triple Crowns in order of created_at' do
     triplecrown3 = Triple.create!(country: 'Canada', year_established: 1959, dirt_track: false)
