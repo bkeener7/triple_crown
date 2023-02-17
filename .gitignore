@@ -26,4 +26,14 @@
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 
+#simplecov
 coverage
+
+#individual settings
+.vscode/settings.json
+
+#DS_Store
+.DS_Store
+
+#rubocop config
+.rubocop.yml
