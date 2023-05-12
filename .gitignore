@@ -30,7 +30,7 @@
 coverage
 
 #individual settings
-.vscode/settings.json
+.vscode
 
 #DS_Store
 .DS_Store
