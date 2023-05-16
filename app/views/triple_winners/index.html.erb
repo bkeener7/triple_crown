@@ -1,11 +1,11 @@
 <h1>Triple Crown of Thoroughbred Racing (<%= @triple.country %>)</h1>
 <% @winners.each do |winner| %>
-    <h2><%= winner.name %></h2>
-    <p><b>Year Won: <%= winner.year_won %></b></p>
-    <p>Jockey: <%= winner.jockey %></p>
-    <p>Trainer: <%= winner.trainer %></p>
-    <p>Sired another Triple Crown winner? <%= winner.sired_TC_winner %></p>
-    <font size="-1"><%= link_to "Edit #{winner.name}", "/winners_table_name/#{winner.id}/edit" %></font></p> 
+  <h2><%= winner.name %></h2>
+  <p><b>Year Won: <%= winner.year_won %></b></p>
+  <p>Jockey: <%= winner.jockey %></p>
+  <p>Trainer: <%= winner.trainer %></p>
+  <p>Sired another Triple Crown winner? <%= winner.sired_TC_winner %></p>
+  <font size="-1"><%= link_to "Edit #{winner.name}", "/winners_table_name/#{winner.id}/edit" %></font></p> 
 <% end %>
 <p><font size="2"><%= link_to 'Sort Alphabetically', sort_param: :name %></font></p>
 <p><font size="2"><%= link_to 'New Triple Crown Winner', "/triples/#{@triple.id}/winners_table_name/new" %></font></p>

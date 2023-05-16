@@ -1,11 +1,11 @@
 <h2>Update <%= @triple.country %> Triple Crown Series</h2>
 
 <%= form_with url: "/triples/#{@triple.id}", method: :patch, local: true do |form| %>
-    <%= form.label :country %>
-    <%= form.text_field :country %><br><br>
-    <%= form.label :year_established %>
-    <%= form.text_field :year_established %><br><br>
-    <%= form.label :dirt_tracks_only? %>
-    <%= form.text_field :dirt_track %><br><br>
-    <%= form.submit 'Update Triple Crown Series' %>
+  <%= form.label :country %>
+  <%= form.text_field :country %><br><br>
+  <%= form.label :year_established %>
+  <%= form.text_field :year_established %><br><br>
+  <%= form.label :dirt_tracks_only?, 'Dirt Tracks Only?' %>
+  <%= form.text_field :dirt_track %><br><br>
+  <%= form.submit 'Update Triple Crown Series' %>
 <% end %>

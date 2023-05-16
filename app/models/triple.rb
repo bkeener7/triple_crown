@@ -1,11 +1,9 @@
 class Triple < ApplicationRecord
   has_many :winners, dependent: :destroy
 
-  def self.order_by_created_at
-    order(created_at: :desc)
-  end
+  scope :order_by_created_at, -> { order(created_at: :desc) }
 
   def winner_count
-    winners.length
+    winners.count
   end
 end
