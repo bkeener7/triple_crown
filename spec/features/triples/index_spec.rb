@@ -27,7 +27,7 @@ RSpec.describe 'triples index' do
         expect(triplecrown4.country).to appear_before(triplecrown3.country)
         expect(triplecrown3.country).to appear_before(triplecrown2.country)
         expect(triplecrown2.country).to appear_before(triplecrown.country)
-        expect(triplecrown.country).to_not appear_before(triplecrown2.country)
+        expect(triplecrown.country).not_to appear_before(triplecrown2.country)
       end
 
       it 'sees when it was created next to each of the records' do

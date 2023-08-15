@@ -21,7 +21,7 @@ RSpec.describe 'triples destroy' do
       click_button "Delete #{triplecrown3.country} Triple Crown"
 
       expect(current_path).to eq('/triples')
-      expect(page).to_not have_content('Canada')
+      expect(page).not_to have_content('Canada')
     end
 
     it 'also deletes triples with their winners' do
@@ -30,7 +30,7 @@ RSpec.describe 'triples destroy' do
       click_button "Delete #{triplecrown2.country} Triple Crown"
 
       visit '/triples'
-      expect(page).to_not have_content('United Kingdom')
+      expect(page).not_to have_content('United Kingdom')
     end
 
     it 'can delete triples from the triple crown index page' do
@@ -41,7 +41,7 @@ RSpec.describe 'triples destroy' do
       click_button "Delete #{triplecrown.country} Triple Crown"
 
       expect(current_path).to eq('/triples')
-      expect(page).to_not have_content(triplecrown.country)
+      expect(page).not_to have_content(triplecrown.country)
     end
   end
 end

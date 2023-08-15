@@ -81,8 +81,8 @@ RSpec.describe 'triple/winners index' do
         click_button('Return Triple Crown Winners After This Date')
 
         expect(page).to have_content(secretariat.name)
-        expect(page).to_not have_content(sirbarton.name)
-        expect(page).to_not have_content(gallantfox.name)
+        expect(page).not_to have_content(sirbarton.name)
+        expect(page).not_to have_content(gallantfox.name)
       end
     end
   end
