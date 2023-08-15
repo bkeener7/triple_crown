@@ -9,12 +9,12 @@ class TriplesController < ApplicationController
 
   def new; end
 
+  def edit; end
+
   def create
     new_triple = Triple.create!(triple_params)
     redirect_to triples_path
   end
-
-  def edit; end
 
   def update
     @triple.update(triple_params)

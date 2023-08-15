@@ -19,7 +19,7 @@ RSpec.describe 'winners index' do
     click_button "Delete #{gallantfox.name}"
 
     expect(current_path).to eq('/winners_table_name')
-    expect(page).to_not have_content('Gallant Fox')
+    expect(page).not_to have_content('Gallant Fox')
   end
 
   it 'can delete winners from winner index page' do
@@ -29,6 +29,6 @@ RSpec.describe 'winners index' do
     click_button "Delete #{gallantfox.name}"
 
     expect(current_path).to eq('/winners_table_name')
-    expect(page).to_not have_content('Gallant Fox')
+    expect(page).not_to have_content('Gallant Fox')
   end
 end
